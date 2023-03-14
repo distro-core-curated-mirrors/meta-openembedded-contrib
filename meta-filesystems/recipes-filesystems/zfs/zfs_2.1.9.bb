@@ -59,3 +59,5 @@ FILES:${PN}-dev += "\
 COMPATIBLE_HOST:riscv32 = "null"
 # conflicting definition of ABS macro from asm/asm.h from kernel
 COMPATIBLE_HOST:mips = "null"
+# Disable on arm64 until https://github.com/openzfs/zfs/issues/14624 is fixed
+COMPATIBLE_HOST:aarch64 = "null"
