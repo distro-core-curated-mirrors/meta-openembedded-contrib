@@ -113,3 +113,8 @@ INITSCRIPT_PARAMS = "start 30 . stop 70 0 1 2 3 4 5 6 ."
 
 SYSTEMD_SERVICE:${PN} = "ipmi.service"
 SYSTEMD_AUTO_ENABLE = "disable"
+
+# http://errors.yoctoproject.org/Errors/Details/766899/
+# OpenIPMI_wrap.c:10523:27: error: assignment to 'const char **' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+# openipmi/2.0.34/recipe-sysroot/usr/lib/perl5/5.38.2/x86_64-linux/CORE/sv.h:1952:31: error: passing argument 3 of 'Perl_SvPV_helper' from incompatible pointer type [-Wincompatible-pointer-types]
+CFLAGS += "-Wno-error=incompatible-pointer-types"

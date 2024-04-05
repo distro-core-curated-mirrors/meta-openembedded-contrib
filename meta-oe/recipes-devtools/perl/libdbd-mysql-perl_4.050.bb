@@ -20,3 +20,7 @@ SRC_URI = "git://github.com/perl5-dbi/DBD-mysql.git;protocol=https;branch=master
 S = "${WORKDIR}/git"
 
 inherit cpan
+
+# http://errors.yoctoproject.org/Errors/Details/766909/
+# dbdimp.c:3207:24: error: assignment to 'my_bool *' {aka 'char *'} from incompatible pointer type '_Bool *' [-Wincompatible-pointer-types]
+CFLAGS += "-Wno-error=incompatible-pointer-types"
