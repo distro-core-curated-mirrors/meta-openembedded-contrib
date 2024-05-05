@@ -31,3 +31,8 @@ FILES:${PN}-dracut = "${nonarch_libdir}/dracut/dracut.conf.d"
 FILES:${PN}-zsh-completion = "${datadir}/zsh/site-functions"
 
 RDEPENDS:${PN} = "util-linux-uuidgen"
+
+# This one is reproducible only on 32bit MACHINEs
+# http://errors.yoctoproject.org/Errors/Details/766964/
+# git/plugins/virtium/virtium-nvme.c:205:63: error: passing argument 1 of 'localtime' from incompatible pointer type [-Wincompatible-pointer-types]
+CFLAGS += "-Wno-error=incompatible-pointer-types"
