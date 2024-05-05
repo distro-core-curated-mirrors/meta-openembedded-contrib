@@ -19,3 +19,8 @@ do_install:append() {
 # Header-only library
 RDEPENDS:${PN}-dev = ""
 RRECOMMENDS:${PN}-dbg = "${PN}-dev (= ${EXTENDPKGV})"
+
+# This one is reproducible only on 32bit arm MACHINEs (didn't see it with qemux86 or qemux86-64 builds)
+# http://errors.yoctoproject.org/Errors/Details/766975/
+# lib32-catch2/2.13.10/git/projects/SelfTest/UsageTests/ToStringGeneral.tests.cpp:122:32: error: value computed is not used [-Werror=unused-value]
+CXXFLAGS += "-Wno-error=unused-value"
