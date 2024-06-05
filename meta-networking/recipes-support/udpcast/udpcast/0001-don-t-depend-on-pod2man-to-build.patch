@@ -1,0 +1,40 @@
+From 77f6e709a350770fada77e9f543e4e927ce44071 Mon Sep 17 00:00:00 2001
+From: Enguerrand de Ribaucourt <enguerrand.de-ribaucourt@savoirfairelinux.com>
+Date: Mon, 20 May 2024 16:36:13 +0200
+Subject: [PATCH] don't depend on pod2man to build
+
+Upstream-Status: Inappropriate
+
+Signed-off-by: Enguerrand de Ribaucourt <enguerrand.de-ribaucourt@savoirfairelinux.com>
+---
+ Makefile.in | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index a65430a..ef15e6e 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -38,9 +38,8 @@ EXESUFFIX=@EXESUFFIX@
+ 
+ CFLAGS += -DNO_BB
+ 
+-all: udp-receiver$(EXESUFFIX) udp-sender$(EXESUFFIX) \
+-	manpages
+-#all: fec-test
++all: udp-receiver$(EXESUFFIX) udp-sender$(EXESUFFIX)
++#all: fec-test manpages
+ 
+ disk: udpcast.img.gz
+ 
+@@ -56,8 +55,6 @@ distclean: clean
+ install: udp-sender udp-receiver rateGovernor.h
+ 	install -d $(DESTDIR)$(prefix)/sbin
+ 	install -m 755 udp-sender udp-receiver $(DESTDIR)$(prefix)/sbin
+-	install -d $(DESTDIR)$(mandir)/man1
+-	install -m 644 udp-sender.1 udp-receiver.1 $(DESTDIR)$(mandir)/man1
+ 	install -d $(DESTDIR)$(prefix)/include/udpcast
+ 	install -m 644 rateGovernor.h $(DESTDIR)$(prefix)/include/udpcast
+ 
+-- 
+2.34.1
+
