@@ -35,6 +35,7 @@ SRC_URI += "file://run-ptest"
 RDEPENDS:${PN}-ptest += "\
     python3-cloudpickle \
     python3-dirty-equals \
+    python3-email-validator \
     python3-pytest \
     python3-pytest-mock \
     python3-rich \
