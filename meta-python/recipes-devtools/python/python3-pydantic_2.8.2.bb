@@ -39,6 +39,7 @@ RDEPENDS:${PN}-ptest += "\
     python3-pytest-mock \
     python3-rich \
     python3-unittest-automake-output \
+    python3-unixadmin \
 "
 
 do_install_ptest() {
