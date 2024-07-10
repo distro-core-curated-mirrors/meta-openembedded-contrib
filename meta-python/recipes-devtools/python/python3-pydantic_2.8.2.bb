@@ -37,6 +37,7 @@ RDEPENDS:${PN}-ptest += "\
     python3-dirty-equals \
     python3-pytest \
     python3-pytest-mock \
+    python3-rich \
     python3-unittest-automake-output \
 "
 
