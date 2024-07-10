@@ -8,7 +8,7 @@ HOMEPAGE = "https://github.com/pydantic/pydantic-core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=ab599c188b4a314d2856b3a55030c75c"
 
-SRC_URI[sha256sum] = "9ad77f1aecedef233390eff7fd643fe652e5ac92b793329424c2a1d2e28c08d1"
+SRC_URI[sha256sum] = "26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4"
 
 DEPENDS = "python3-maturin-native python3-typing-extensions"
 
