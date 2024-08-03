@@ -22,6 +22,12 @@ RDEPENDS:${PN} += "python3-typing-extensions"
 
 INSANE_SKIP:${PN} = "already-stripped"
 
+CARGO_BUILD_FLAGS:prepend = "-Zbuild-std-features=panic_immediate_abort "
+
+do_configure:append () {
+    nativepython3 ${S}/generate_self_schema.py
+}
+
 inherit ptest
 SRC_URI += "file://run-ptest"
 RDEPENDS:${PN}-ptest += "\
