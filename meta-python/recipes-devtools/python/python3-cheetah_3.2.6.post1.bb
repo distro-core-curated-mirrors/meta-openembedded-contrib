@@ -3,8 +3,9 @@ HOMEPAGE = "https://cheetahtemplate.org/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=15e13a4ed0e5880e3e55ec88b0921181"
 
-PYPI_PACKAGE = "Cheetah3"
 inherit pypi setuptools3
+PYPI_PACKAGE = "Cheetah3"
+PYPI_ARCHIVE_NAME = "${PYPI_PACKAGE}"
 
 RDEPENDS:${PN} = "python3-pickle python3-pprint"
 RDEPENDS:${PN}:class-native = ""
